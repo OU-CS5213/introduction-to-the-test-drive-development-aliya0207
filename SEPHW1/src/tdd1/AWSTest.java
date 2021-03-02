@@ -97,7 +97,7 @@ class AWSTest {
 	
 	}
 	@Test
-	// Here this test function should fail as it is not corrected.
+	// Here this test function should fail as it is not corrected yet.
 	void testFillAndExpandWithNegative() {
 		int position = 1;
 		int numberOfTimes = -2;

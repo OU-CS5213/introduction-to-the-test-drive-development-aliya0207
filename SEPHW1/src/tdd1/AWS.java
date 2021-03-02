@@ -46,7 +46,7 @@ public class AWS {
 		for(int i = position; i<=numberOfTimes + position; ++i) {
 			newArray[i] = newArray[position];
 		}
-		// Make examples, so it is easier to visualize your methods
+		// Make examples , so it is easier to visualize your methods
 		//   p 1 2
 		// a b c
 		// a b b b c
