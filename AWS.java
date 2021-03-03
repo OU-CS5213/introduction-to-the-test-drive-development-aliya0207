@@ -55,5 +55,19 @@ public class AWS {
 		}
 		values = newArray;
 	}
+         
+	public int removeBiggerThan(int threshold)
+	{
+		int count=0;
+		for(int i=0; i<values.length;++i)
+		{
+			if(values[i]>threshold)
+			{
+				count+=1;
+				values[i]=FILLER_VALUE;
+			}
+		}
+		return count;
+	}
 
 }
