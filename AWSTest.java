@@ -6,7 +6,7 @@ import org.junit.jupiter.api.Test;
 class AWSTest {
 
 	private static final int FILLER_VALUE = Integer.MIN_VALUE;
-	private int[] original={1, 2, 3};
+	private int[] original={1, 2, 3,4,5};
 	AWS originalAWS;
 	
 	@BeforeEach
@@ -119,5 +119,23 @@ class AWSTest {
 	
 	}
 
+         @Test
+	 void testremoveBiggerThan()
+	 {
+		 //int[] x= {1,2,3,4,5};
+		 int threshold=3;
+		 int[] org = originalAWS.getValues();
+		 int expectedCount=2;
+		 int expected= FILLER_VALUE;
+				 
+		 int resultCount=originalAWS.removeBiggerThan(threshold);
+		 int[] resultValues=originalAWS.getValues();
+		
+		assertEquals(expectedCount,resultCount);
+		assertEquals(expected,resultValues[3]);
+		assertEquals(expected,resultValues[4]);
+
+		 
+	 }
 
 }
