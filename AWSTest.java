@@ -138,4 +138,22 @@ class AWSTest {
 		 
 	 }
 
+
+         @Test
+	void teststepMultiplier()
+	{
+		int [] x= {3,18,30};
+		AWS aws = new AWS(x);
+		int expectedA=3*2;
+		int expectedB=18*4;
+		int expectedC=30*100;
+		
+		aws.stepMultiplier();
+		int []result=aws.getValues();
+		assertEquals(expectedA, result[0]);
+		assertEquals(expectedB, result[1]);
+		assertEquals(expectedC, result[2]);
+		
+		
+	}
 }
