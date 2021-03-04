@@ -20,3 +20,5 @@ You will make frequent commits:
 * [ DONE ] Create a unit tests for **stepMultiplier()**
 
 DISCUSSED ABOUT GIT ACTIONS AND TEST METHODS WITH LAHARI MITTAPALLI.
+
+
