@@ -6,7 +6,7 @@ import org.junit.jupiter.api.Test;
 class AWSTest {
 
 	private static final int FILLER_VALUE = Integer.MIN_VALUE;
-	private int[] original={1, 2, 3};
+	private int[] original={1, 2, 3,4,5};
 	AWS originalAWS;
 	
 	@BeforeEach
@@ -16,17 +16,37 @@ class AWSTest {
 
 	@Test
 	void testGetValues() {
-		fail("Not yet implemented");
+		
+  		int[] x= {1,2,3};
+		AWS aws = new AWS(x);
+		int[] result = aws.getValues();
+		assertEquals(result[0],x[0]);
 	}
+
 
 	@Test
 	void testSetValues() {
-		fail("Not yet implemented");
+	
+		int[] x= {1,2,3};
+		int[] y= {7,8,9};
+		AWS aws = new AWS(x);
+		aws.setValues(y);
+		int[] result=aws.getValues();
+		assertEquals(result[0],y[0]);
+		assertEquals(result[2],y[2]);
+		assertEquals(result.length,y.length);
+		
 	}
 
 	@Test
 	void testToString() {
-		fail("Not yet implemented");
+		int[] x= {7,8,9};
+		AWS aws = new AWS(x);
+		String expected = "AWS [values=[7, 8, 9]]";
+		String result= aws.toString();
+		assertEquals(result,expected);
+		
+
 	}
 
 	@Test
@@ -102,7 +122,7 @@ class AWSTest {
 		int[] org = originalAWS.getValues();
 		int expectedValue = org[position];
  		int first = org[0];
-		int expected = originalAWS.getValues().length + numberOfTimes;
+		int expected = originalAWS.getValues().length + Math.abs(numberOfTimes);
 		originalAWS.fillAndExpand(position, numberOfTimes);
 		int[] result = originalAWS.getValues();
 		assertEquals(expected, result.length);
@@ -119,5 +139,41 @@ class AWSTest {
 	
 	}
 
+         @Test
+	 void testremoveBiggerThan()
+	 {
+		 //int[] x= {1,2,3,4,5};
+		 int threshold=3;
+		 int[] org = originalAWS.getValues();
+		 int expectedCount=2;
+		 int expected= FILLER_VALUE;
+				 
+		 int resultCount=originalAWS.removeBiggerThan(threshold);
+		 int[] resultValues=originalAWS.getValues();
+		
+		assertEquals(expectedCount,resultCount);
+		assertEquals(expected,resultValues[3]);
+		assertEquals(expected,resultValues[4]);
 
+		 
+	 }
+
+
+         @Test
+	void teststepMultiplier()
+	{
+		int [] x= {3,18,30};
+		AWS aws = new AWS(x);
+		int expectedA=3*2;
+		int expectedB=18*4;
+		int expectedC=30*100;
+		
+		aws.stepMultiplier();
+		int []result=aws.getValues();
+		assertEquals(expectedA, result[0]);
+		assertEquals(expectedB, result[1]);
+		assertEquals(expectedC, result[2]);
+		
+		
+	}
 }
