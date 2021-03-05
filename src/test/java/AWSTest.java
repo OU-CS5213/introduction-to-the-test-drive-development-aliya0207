@@ -33,7 +33,6 @@ class AWSTest {
 		int[] result=aws.getValues();
 		assertEquals(result[0],y[0]);
 		assertEquals(result[2],y[2]);
-
 		assertEquals(result.length,y.length);
 		
 	}
