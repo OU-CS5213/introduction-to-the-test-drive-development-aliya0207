@@ -14,14 +14,14 @@ class AWSTest {
 		 originalAWS = new AWS(this.original);
 	}
 
-	//@Test
-	//void testGetValues() {
+	@Test
+	void testGetValues() {
 		
-  		//int[] x= {1,2,3};
-		//AWS aws = new AWS(x);
-		//int[] result = aws.getValues();
-		//assertEquals(result[0],x[0]);
-	//}
+  		int[] x= {1,2,3};
+		AWS aws = new AWS(x);
+		int[] result = aws.getValues();
+		assertEquals(result[1],x[0]);
+	}
 
 	@Test
 	void testSetValues() {
