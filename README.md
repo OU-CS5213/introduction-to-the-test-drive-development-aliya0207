@@ -19,6 +19,6 @@ You will make frequent commits:
 * [ DONE ] Create a method **stepMultiplier()** in the AWS class that will multiply all values less than 10 by 2, and all values that are less than 20 and bigger than 10 by 4, and all values that are less than 100 and bigger than 20 by 100;
 * [ DONE ] Create a unit tests for **stepMultiplier()**
 
-DISCUSSED ABOUT GIT ACTIONS AND TEST METHODS WITH LAHARI MITTAPALLI.
+COLLABORATIONS: DISCUSSED ABOUT GIT ACTIONS AND TEST METHODS WITH LAHARI MITTAPALLI.
 
 
